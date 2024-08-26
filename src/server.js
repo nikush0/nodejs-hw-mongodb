@@ -8,7 +8,6 @@ import path from 'node:path';
 
 import { errorHandler } from './middleware/errorHandler.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
-// import { UPLOAD_DIR } from './constants/index.js';
 
 async function setupServer() {
   try {
