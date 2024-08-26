@@ -3,8 +3,8 @@ import pino from 'pino-http';
 import cors from 'cors';
 import router from './routers/index.js';
 import cookieParser from 'cookie-parser';
-
 import { env } from './utils/env.js';
+import path from 'node:path';
 
 import { errorHandler } from './middleware/errorHandler.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
@@ -12,6 +12,8 @@ import { notFoundHandler } from './middleware/notFoundHandler.js';
 async function setupServer() {
   try {
     const app = express();
+    app.use(express.static(path.resolve('uploads')));
+
     app.use(express.json());
 
     app.use(cors());
