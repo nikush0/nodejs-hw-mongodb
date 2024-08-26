@@ -1,6 +1,6 @@
 import { isValidObjectId } from 'mongoose';
 import createHttpError from 'http-errors';
-
+// валідація ID
 export const isValidId = (req, res, next) => {
   const { id } = req.params;
   if (isValidObjectId(id) === false) {
